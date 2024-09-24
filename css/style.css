@@ -5277,7 +5277,8 @@ button.bg-warning:focus {
 
 a.bg-danger:hover, a.bg-danger:focus,
 button.bg-danger:hover,
-button.bg-danger:focus {
+
+.bg-danger:focus {
   background-color: #bd2130 !important; }
 
 .bg-light {
@@ -8514,7 +8515,7 @@ h1, h2, h3, h4, h5,
   .btn.btn-primary {
     background: #ffd615;
     border: 1px solid #ffd615 !important;
-    color: #fff !important; }
+    color: #000 !important; }
     .btn.btn-primary:hover {
       border: 1px solid #ffd615;
       background: #ffd615;
@@ -9653,7 +9654,7 @@ textarea.form-control {
   background-position: top center; }
 
 .contact-section .contact-info p a {
-  color: #ffd615; }
+  color: #005cbf; }
 
 .contact-section .contact-form {
   width: 100%; }
