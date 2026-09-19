@@ -114,10 +114,11 @@
 	</section>
 	
 	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-about-section" id="about-section">
+		<div class="ipc-about-stage">
 		<div class="container-fluid px-0">
 			<div class="row d-md-flex text-wrapper">
-				<div class="one-half img" style="background-image: url('images/about.jpg');"></div>
-				<div class="one-half half-text d-flex justify-content-end align-items-center ftco-animate">
+				<div class="one-half img ipc-about-image" style="background-image: url('images/about.jpg');"></div>
+				<div class="one-half half-text ipc-about-copy d-flex justify-content-end align-items-center ftco-animate">
 					<div class="text-inner pl-md-5">
 						<h3 class="heading">Welcome to Charismatic Church</h3>
 						<p>Charismatic Church was founded in the year 2011 in Ganganadu, a village in Udupi district, in the state of Karnataka, in India. It initially started as a prayer group by Pastor.Paulson Valookkaran Augusthy with his family. As time passed by, people joined the group. The church grew slowly and the fame spreaded. On April,2011 Charismatic Church conducted its first public services. Founded as a nondenominational church, its emphasis was on the basics of Christianity.Worship services were conducted in a small hall at Pastor. Paulson's house. People from many different areas started contacting. In 2012, services were moved to the newly built chapel at the present location on Ganganadu. Less than a month later, two services were being conducted on Sunday mornings, the first was the Sunday school classes, and Sunday Services. Charismatic Church became known as "the fastest growing and the spiritual Church in the towns nearby".</p>
@@ -127,6 +128,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</section>
 	
 	
@@ -644,5 +646,54 @@
 		<span class="icon-whatsapp" aria-hidden="true"></span>
 		<span class="ipc-whatsapp-label">WhatsApp</span>
 	</a>
+
+<script>
+(function () {
+  function initAboutStory() {
+    var section = document.getElementById('about-section');
+    var stage = section && section.querySelector('.ipc-about-stage');
+    var copy = section && section.querySelector('.ipc-about-copy .text-inner');
+    if (!section || !stage || !copy) return;
+
+    function reset() {
+      section.style.height = '';
+      copy.style.transform = '';
+    }
+
+    function measure() {
+      if (window.innerWidth < 992) {
+        reset();
+        return;
+      }
+
+      var stageHeight = stage.getBoundingClientRect().height;
+      var copyHeight = copy.scrollHeight;
+      var scrollDistance = Math.max(0, copyHeight - stageHeight);
+      section.style.height = (stageHeight + scrollDistance) + 'px';
+      update();
+    }
+
+    function update() {
+      if (window.innerWidth < 992) return;
+      var rect = section.getBoundingClientRect();
+      var maxScroll = Math.max(0, copy.scrollHeight - stage.getBoundingClientRect().height);
+      var progress = Math.min(1, Math.max(0, -rect.top / Math.max(1, section.offsetHeight - stage.getBoundingClientRect().height)));
+      copy.style.transform = 'translate3d(0,' + (-maxScroll * progress) + 'px,0)';
+    }
+
+    window.addEventListener('resize', measure);
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('load', measure);
+    measure();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAboutStory);
+  } else {
+    initAboutStory();
+  }
+})();
+</script>
+
 </body>
 </html>
