@@ -219,3 +219,51 @@ img { max-width: 100%; height: auto; }
     padding: 3rem 1.5rem !important;
   }
 }
+
+
+/* About story layout fix: prevent the legacy 600px/absolute positioning
+   from creating extra blank space on large screens. */
+@media (min-width: 992px) {
+  #about-section.ipc-about-story {
+    overflow: visible !important;
+  }
+
+  #about-section.ipc-about-story .ipc-about-stage {
+    width: 100%;
+  }
+
+  #about-section.ipc-about-story .ipc-about-stage > .container-fluid,
+  #about-section.ipc-about-story .ipc-about-stage > .container-fluid > .row {
+    display: flex;
+    width: 100%;
+  }
+
+  #about-section.ipc-about-story .ipc-about-stage > .container-fluid > .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #about-section.ipc-about-story .ipc-about-image,
+  #about-section.ipc-about-story .ipc-about-copy {
+    flex: 0 0 50%;
+    width: 50%;
+  }
+
+  #about-section.ipc-about-story .ipc-about-copy {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+  }
+
+  #about-section.ipc-about-story .ipc-about-copy.ftco-animate {
+    opacity: 1;
+    transform: none !important;
+  }
+
+  #about-section.ipc-about-story .ipc-about-copy .text-inner {
+    box-sizing: border-box;
+  }
+}
