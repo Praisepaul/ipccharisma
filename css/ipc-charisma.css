@@ -34,7 +34,8 @@ img { max-width: 100%; height: auto; }
   gap: 1.5rem;
   overflow-x: auto !important;
   overscroll-behavior-x: contain;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   padding: 0.25rem 0.25rem 1.5rem;
 }
 #scrollRow > .col-md-4 {
@@ -150,3 +151,14 @@ img { max-width: 100%; height: auto; }
     scroll-behavior: auto !important;
   }
 }
+
+#scrollRow::-webkit-scrollbar { display: none; }
+
+/* Keep the Gather With Us section readable over the light background. */
+#events-section .heading-section,
+#events-section .heading-section h2,
+#events-section .heading-section p,
+#events-section .heading-section .subheading,
+#events-section .bg-white,
+#events-section .bg-white h3,
+#events-section .bg-white p { color: #333 !important; }
