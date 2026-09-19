@@ -9982,3 +9982,403 @@ textarea.form-control {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+/* --------------------------------------------------------------------------
+   IPC CHARISMA SITE REFINEMENTS
+   Consolidated from css/ipc-charisma.css so the project has one custom stylesheet.
+   -------------------------------------------------------------------------- */
+
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+img { max-width: 100%; height: auto; }
+
+.navbar-brand { white-space: nowrap; }
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link { padding-left: 0.8rem; padding-right: 0.8rem; }
+
+.ftco-about-section .text-inner {
+  padding: 4rem clamp(1.25rem, 4vw, 5rem) !important;
+}
+.ftco-about-section .text-inner p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.sermon-wrap { height: 100%; }
+.sermon-wrap .img {
+  min-height: 300px;
+  border-radius: 4px;
+}
+.sermon-wrap .text-content h3 {
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+.sermon-wrap .text h2 {
+  font-size: 1.15rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+#scrollRow {
+  gap: 1.5rem;
+  overflow-x: auto !important;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0.25rem 0.25rem 1.5rem;
+}
+#scrollRow > .col-md-4 {
+  flex: 0 0 min(360px, 86vw);
+  max-width: 360px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.scroll-arrow { z-index: 2; }
+
+.ftco-section { overflow: hidden; }
+.heading-section h2 { line-height: 1.2; }
+.heading-section .subheading { letter-spacing: 0.2em; }
+
+.ipc-whatsapp-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1030;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: #25D366;
+  color: #fff !important;
+  text-decoration: none !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,.2);
+  font-weight: 600;
+}
+.ipc-whatsapp-float .icon-whatsapp { font-size: 1.25rem; }
+.ipc-whatsapp-float:hover, .ipc-whatsapp-float:focus {
+  color: #fff !important;
+  transform: translateY(-2px);
+  outline: none;
+}
+.ipc-whatsapp-float:focus-visible {
+  box-shadow: 0 0 0 3px rgba(37,211,102,.3), 0 6px 20px rgba(0,0,0,.2);
+}
+
+@media (max-width: 991.98px) {
+  .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+    padding: 0.6rem 0;
+  }
+  .home-slider .slider-item,
+  .home-slider .js-fullheight,
+  .home-slider .slider-text {
+    min-height: 620px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .home-slider .slider-item,
+  .home-slider .js-fullheight,
+  .home-slider .slider-text {
+    min-height: 600px;
+    height: auto !important;
+  }
+  .home-slider .slider-text .text {
+    padding: 5rem 1rem 3rem;
+  }
+  .home-slider h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 1.15;
+  }
+  .home-slider p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+  .home-slider .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .ftco-about-section .one-half.img {
+    min-height: 320px;
+  }
+  .ftco-about-section .text-inner {
+    padding: 2.5rem 1.25rem !important;
+  }
+  .ftco-about-section .heading {
+    font-size: 1.8rem;
+  }
+
+  .ftco-services-2 .row > [class*="col-"] {
+    margin-bottom: 1rem;
+  }
+  .sermon-wrap .img { min-height: 260px; }
+  #scrollRow > .col-md-4 {
+    flex-basis: 82vw;
+  }
+
+  .ipc-whatsapp-float {
+    right: 14px;
+    bottom: 14px;
+    width: 52px;
+    height: 52px;
+    justify-content: center;
+    padding: 0;
+  }
+  .ipc-whatsapp-label { display: none; }
+
+  .ftco-footer { padding-bottom: 5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+#scrollRow::-webkit-scrollbar { display: none; }
+
+/* Keep the Gather With Us section readable over the light background. */
+#events-section .heading-section,
+#events-section .heading-section h2,
+#events-section .heading-section p,
+#events-section .heading-section .subheading,
+#events-section .bg-white,
+#events-section .bg-white h3,
+#events-section .bg-white p { color: #333 !important; }
+
+
+/* About Us: immersive scroll section on larger screens. The section itself stays
+   in place while the long story moves through the right-hand panel. */
+@media (min-width: 992px) {
+  #about-section.ipc-about-story {
+    position: relative;
+    height: var(--about-scroll-height, 100vh);
+  }
+
+  #about-section.ipc-about-story .ipc-about-stage {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+  }
+
+  #about-section.ipc-about-story .ipc-about-stage > .container-fluid,
+  #about-section.ipc-about-story .ipc-about-stage > .container-fluid > .row {
+    height: 100%;
+  }
+
+  #about-section.ipc-about-story .ipc-about-image {
+    height: 100%;
+    min-height: 0;
+  }
+
+  #about-section.ipc-about-story .ipc-about-copy {
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    display: block !important;
+    padding: 0 !important;
+  }
+
+  #about-section.ipc-about-story .ipc-about-copy .text-inner {
+    max-width: none !important;
+    width: 100%;
+    padding: clamp(3rem, 7vw, 6rem) clamp(2rem, 5vw, 6rem) !important;
+    will-change: transform;
+  }
+
+  #about-section.ipc-about-story .ipc-about-copy .text-inner h3 {
+    margin-bottom: 2rem;
+  }
+
+  #about-section.ipc-about-story .ipc-about-copy .text-inner p {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  #about-section.ipc-about-story .ipc-about-copy .text-inner {
+    padding: 3rem 1.5rem !important;
+  }
+}
+
+
+/* About story layout fix: prevent the legacy 600px/absolute positioning
+   from creating extra blank space on large screens. */
+@media (min-width: 992px) {
+  #about-section.ipc-about-story {
+    overflow: visible !important;
+  }
+
+  #about-section.ipc-about-story .ipc-about-stage {
+    width: 100%;
+  }
+
+  #about-section.ipc-about-story .ipc-about-stage > .container-fluid,
+  #about-section.ipc-about-story .ipc-about-stage > .container-fluid > .row {
+    display: flex;
+    width: 100%;
+  }
+
+  #about-section.ipc-about-story .ipc-about-stage > .container-fluid > .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #about-section.ipc-about-story .ipc-about-image,
+  #about-section.ipc-about-story .ipc-about-copy {
+    flex: 0 0 50%;
+    width: 50%;
+  }
+
+  #about-section.ipc-about-story .ipc-about-copy {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+  }
+
+  #about-section.ipc-about-story .ipc-about-copy.ftco-animate {
+    opacity: 1;
+    transform: none !important;
+  }
+
+  #about-section.ipc-about-story .ipc-about-copy .text-inner {
+    box-sizing: border-box;
+  }
+}
+
+
+.ftco-section:not(.ftco-about-section) {
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+@media (max-width: 767.98px) {
+  .ftco-section:not(.ftco-about-section) {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+}
+#services-section > .container > .row:first-child,
+#sermons-section > .container > .row:first-child {
+  padding-bottom: 2rem !important;
+}
+#services-section .services-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+#services-section .services-grid > [class*="col-"] {
+  width: auto;
+  max-width: none;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+#services-section .services-grid .services {
+  width: 100%;
+  min-height: 120px;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+#services-section .services-grid .services .media-body {
+  width: 100%;
+}
+#services-section .services-grid .services h3 {
+  margin-bottom: 0 !important;
+  line-height: 1.35;
+}
+@media (max-width: 991.98px) {
+  #services-section .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 575.98px) {
+  #services-section .services-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  #services-section .services-grid > [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #services-section .services-grid .services {
+    min-height: 0;
+    padding: 1.5rem 1rem;
+  }
+}
+#scrollRow {
+  align-items: stretch !important;
+  gap: 1.5rem;
+  padding-top: 0;
+}
+#scrollRow > .col-md-4 {
+  display: flex;
+  align-items: stretch;
+  flex: 0 0 min(360px, 86vw);
+  max-width: 360px;
+}
+#scrollRow .sermon-wrap {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1rem;
+}
+#scrollRow .sermon-wrap .img {
+  height: 450px;
+  min-height: 0;
+}
+#scrollRow .sermon-wrap .text {
+  min-height: 105px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 1rem !important;
+}
+#scrollRow .sermon-wrap .text h2 {
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+#scrollRow .sermon-wrap .meta {
+  min-height: 1.25rem;
+  margin-top: 0.35rem;
+}
+@media (max-width: 767.98px) {
+  #scrollRow {
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+  }
+  #scrollRow > .col-md-4 {
+    flex-basis: 82vw;
+  }
+  #scrollRow .sermon-wrap .img {
+    height: 300px;
+  }
+  #scrollRow .sermon-wrap .text {
+    min-height: 85px;
+  }
+}
+.sermon-scroll-controls {
+  height: 0;
+  margin: 0 !important;
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+}
+.sermon-scroll-controls .scroll-arrow {
+  pointer-events: auto;
+  top: 1.5rem;
+  transform: none;
+}
