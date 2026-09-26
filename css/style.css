@@ -10493,10 +10493,13 @@ img { max-width: 100%; height: auto; }
   box-shadow: inset 0 -2px 0 currentColor;
 }
 .ipc-testimony-language-panel {
-  max-width: 780px;
+  max-width: 980px;
   margin: 0 auto;
   font-size: 1.02rem;
   line-height: 1.85;
+}
+.ipc-testimony-language-panel[lang="ml"] {
+  font-family: "Noto Sans Malayalam", "Noto Sans", sans-serif;
 }
 .ipc-testimony-language-panel p {
   margin-bottom: 1.35rem;
