@@ -10382,3 +10382,164 @@ img { max-width: 100%; height: auto; }
   top: 1.5rem;
   transform: none;
 }
+
+
+/* Pastor testimony preview and full-page reading modal */
+.ipc-pastor-story-row {
+  align-items: stretch;
+}
+.ipc-pastor-tile-col,
+.ipc-testimony-preview-col {
+  display: flex;
+}
+.ipc-pastor-tile-col .staff,
+.ipc-testimony-preview-col .ipc-testimony-preview {
+  width: 100%;
+  height: 100%;
+}
+.ipc-testimony-preview {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  box-shadow: 0 10px 35px rgba(0,0,0,.06);
+}
+.ipc-testimony-preview-inner {
+  width: 100%;
+}
+.ipc-testimony-preview .subheading,
+.ipc-testimony-modal .subheading {
+  display: block;
+  margin-bottom: .75rem;
+}
+.ipc-testimony-preview h3 {
+  margin-bottom: 1rem;
+}
+.ipc-testimony-preview-excerpt {
+  font-family: Lora, Georgia, serif;
+  font-style: italic;
+}
+.ipc-testimony-preview .btn {
+  margin-top: .5rem;
+}
+.ipc-testimony-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: stretch;
+  justify-content: stretch;
+}
+.ipc-testimony-modal.is-open {
+  display: flex;
+}
+.ipc-testimony-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 20, 25, .78);
+}
+.ipc-testimony-modal-panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1100px);
+  height: 100%;
+  margin: 0 auto;
+  background: #fff;
+  overflow-y: auto;
+  padding: clamp(1.5rem, 4vw, 4rem);
+  box-shadow: 0 0 50px rgba(0,0,0,.25);
+}
+.ipc-testimony-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.ipc-testimony-modal-header h2 {
+  margin-bottom: 0;
+}
+.ipc-testimony-close {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: #f3f3f3;
+  color: #222;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.ipc-testimony-language {
+  display: flex;
+  gap: .5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: .75rem;
+}
+.ipc-testimony-language button {
+  border: 0;
+  background: transparent;
+  padding: .55rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #777;
+}
+.ipc-testimony-language button.active {
+  color: #111;
+  box-shadow: inset 0 -2px 0 currentColor;
+}
+.ipc-testimony-language-panel {
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+.ipc-testimony-language-panel p {
+  margin-bottom: 1.35rem;
+}
+.ipc-testimony-language-panel blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 3px solid #ffd615;
+  font-family: Lora, Georgia, serif;
+  font-style: italic;
+  background: #fafafa;
+}
+.ipc-testimony-coming-soon {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #777;
+}
+body.ipc-testimony-modal-open {
+  overflow: hidden;
+}
+@media (max-width: 991.98px) {
+  .ipc-pastor-story-row {
+    row-gap: 1.5rem;
+  }
+  .ipc-testimony-preview-col .ipc-testimony-preview {
+    min-height: 260px;
+  }
+}
+@media (max-width: 575.98px) {
+  .ipc-testimony-preview {
+    padding: 1.5rem;
+  }
+  .ipc-testimony-modal-panel {
+    padding: 1.25rem;
+  }
+  .ipc-testimony-modal-header {
+    gap: 1rem;
+  }
+  .ipc-testimony-modal-header h2 {
+    font-size: 1.6rem;
+  }
+  .ipc-testimony-language-panel {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
