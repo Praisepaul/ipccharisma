@@ -10520,6 +10520,18 @@ img { max-width: 100%; height: auto; }
 body.ipc-testimony-modal-open {
   overflow: hidden;
 }
+@media (min-width: 992px) {
+  .ipc-testimony-preview {
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 0;
+  }
+  .ipc-testimony-preview-inner {
+    width: 100%;
+  }
+}
+
 @media (max-width: 991.98px) {
   .ipc-pastor-story-row {
     row-gap: 1.5rem;
